@@ -18,7 +18,7 @@ class Torre_Control():
     def status_aterrizaje(self):
         return self.__status_aterrizaje
     
-    @status_aterrizaje.setters
+    @status_aterrizaje.setter
     def status_aterrizaje(self, nuevo_status):
         self.__status_aterrizaje = nuevo_status
     
@@ -29,6 +29,15 @@ class Torre_Control():
     @status_despegue.setter
     def status_despegue(self, nuevo_status):
         self.__status_despegue = nuevo_status
+
+
+    def autorizar_despegue(self):
+        self.__status_despegue = True
+
+    def autorizar_aterrizaje(self):
+        self.__status_aterrizaje = True
+
+    
 
     
         
