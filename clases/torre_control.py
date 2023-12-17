@@ -1,7 +1,7 @@
-from aeropuerto import Aeropuerto
+
 
 class Torre_Control():
-    def __init__(self, aeropuerto = Aeropuerto) -> None:
+    def __init__(self, aeropuerto) -> None:
         self.__aeropuerto = aeropuerto
         self.__status_despegue = None
         self.__status_aterrizaje = None

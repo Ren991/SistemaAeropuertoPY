@@ -1,5 +1,6 @@
-from aeropuerto import Aeropuerto
+
 from avion import Avion
+#from aeropuerto import Aeropuerto
 from pasajero import Pasajero
 from comisario import Comisario
 from datetime import *
@@ -9,7 +10,7 @@ from random import randint
 
 class Vuelo():
     __numeros_vuelos = set()
-    def __init__(self, origen: Aeropuerto , destino: Aeropuerto, modelo_avion: Avion, aerolinea: str, comisario_vuelo: Comisario) -> None:
+    def __init__(self, origen , destino,torre_control:Torre_Control ,modelo_avion: Avion, aerolinea: str, comisario_vuelo: Comisario) -> None:
         self.__origen = origen
         self.__destino = destino
         self.__modelo_avion = modelo_avion
@@ -17,6 +18,7 @@ class Vuelo():
         self.__aerolinea = aerolinea
         self.__numero_vuelo = Vuelo.__crear_num_vuelo()
         self.__comisario_vuelo = comisario_vuelo
+        self.__torre_control = torre_control
 
         
 
@@ -68,13 +70,18 @@ class Vuelo():
     def numero_vuelo(self, nuevo_num):
         self.__numero_vuelo = nuevo_num
 
+    
     @property
     def status_despegue(self):
-        return Torre_Control.status_despegue
+        return self.__torre_control.status_despegue
     
     @property
     def status_aterrizaje(self):
-        return Torre_Control.status_aterrizaje
+        return self.__torre_control.status_aterrizaje
+    
+    @property
+    def torre_control(self):
+        return self.__torre_control
     
     @property
     def horario_salida(self):

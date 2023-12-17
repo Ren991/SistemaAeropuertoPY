@@ -1,7 +1,8 @@
-from vuelo import *
 
+from vuelo import Vuelo
 
 class Aeropuerto():
+    
     def __init__(self,nombre: str, ciudad:str) -> None:
         self.__nombre = nombre
         self.__ciudad = ciudad
@@ -25,6 +26,10 @@ class Aeropuerto():
     @property
     def vuelos(self):
         return self.__vuelos
+    
+    @vuelos.setter
+    def vuelos(self, nuevos_vuelos):
+        self.__vuelos = nuevos_vuelos
     
     def añadir_vuelo(self, vuelo: Vuelo):
         self.__vuelos.append(vuelo)
