@@ -1,12 +1,15 @@
 
-from vuelo import Vuelo
 
 class Aeropuerto():
     
     def __init__(self,nombre: str, ciudad:str) -> None:
         self.__nombre = nombre
         self.__ciudad = ciudad
+        self.__status_aterrizaje = False
+        self.__status_despegue = False
         self.__vuelos = []
+
+        
 
     @property
     def nombre(self):
@@ -21,18 +24,39 @@ class Aeropuerto():
 
     @ciudad.setter
     def ciudad(self, nueva_ciudad):
-        self.__ciudad = nueva_ciudad
+        self.__ciudad = nueva_ciudad    
 
+    @property
+    def status_despegue(self):
+        return self.__status_despegue
+    
+    @status_despegue.setter
+    def status_despegue(self,nuevo_status):
+        self.__status_despegue = nuevo_status
+    
+    @property
+    def status_aterrizaje(self):
+        return self.__status_aterrizaje
+    
+    @status_aterrizaje.setter
+    def status_aterrizaje(self,nuevo_status):
+        self.__status_aterrizaje = nuevo_status
+    
     @property
     def vuelos(self):
         return self.__vuelos
     
-    @vuelos.setter
-    def vuelos(self, nuevos_vuelos):
+    @property
+    def vuelos(self,nuevos_vuelos):
         self.__vuelos = nuevos_vuelos
     
-    def añadir_vuelo(self, vuelo: Vuelo):
-        self.__vuelos.append(vuelo)
+    def solicitar_despegue(self):
+        self.__status_despegue = True
+    
+    def solicitar_aterrizaje(self):
+        self.__status_aterrizaje = True
+    
+
 
     def __str__(self) -> str:
         return f"Aeropuerto {self.nombre} de la ciudad de {self.ciudad}"

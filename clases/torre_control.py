@@ -1,10 +1,15 @@
 
 
+from aeropuerto import Aeropuerto
+from vuelo import *
+
+
 class Torre_Control():
-    def __init__(self, aeropuerto) -> None:
+    def __init__(self, aeropuerto:Aeropuerto) -> None:
         self.__aeropuerto = aeropuerto
         self.__status_despegue = None
         self.__status_aterrizaje = None
+        self.__vuelos = []
 
     @property
     def aeropuerto(self):
@@ -36,8 +41,12 @@ class Torre_Control():
 
     def autorizar_aterrizaje(self):
         self.__status_aterrizaje = True
-
     
+    def añadir_vuelo(self, vuelo: Vuelo):
+        
+        self.__vuelos.append(vuelo)
+
+
 
     
         
