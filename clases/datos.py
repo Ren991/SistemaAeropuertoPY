@@ -91,10 +91,14 @@ print(vuelo)
 
 aeropuerto_origen.solicitar_despegue()
 
-print(vuelo.despegar())
+vuelo.despegar()
+aeropuerto_origen.resetear_status_despegue()
+
 
 aeropuerto_destino.solicitar_aterrizaje()
-print(vuelo.aterrizar())
+vuelo.aterrizar()
+aeropuerto_destino.resetear_status_aterrizaje()
+
 
 pasajero1 = Pasajero("Nombre Pasajero 1","62222222",False)
 vuelo.añadir_pasajero(pasajero1)

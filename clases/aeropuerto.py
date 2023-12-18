@@ -55,6 +55,14 @@ class Aeropuerto():
     
     def solicitar_aterrizaje(self):
         self.__status_aterrizaje = True
+
+    def resetear_status_despegue(self): #=> Invierte valor propiedad status_despegue
+        self.__status_despegue = False
+    
+    def resetear_status_aterrizaje(self): #=> Invierte valor propiedad status_aterrizaje
+        self.__status_aterrizaje = False
+
+    
     
 
 
