@@ -1,18 +1,9 @@
-#Aeropuerto(nombre:str,ciudad:str)
-#Torre_Control(aeropuerto:str)
-#Vuelo(origen,destino,modelo_avion)
-#Comisario(nombre,edad)
-#Pasajero(nombre:str,dni: str, es_adulto: bool)
-#Avion(modelo: str, capacidad:str)
-
-
 from aeropuerto import Aeropuerto
-from avion import Avion
-from pasajero import Pasajero
-from comisario import Comisario
-
 from vuelo import Vuelo
-from code_generator import CodGenerator
+from avion import Avion
+from comisario import Comisario
+from pasajero import Pasajero
+
 
 # Crear instancias de otras clases
 aeropuertos = [
@@ -81,26 +72,33 @@ aerolineas = [
 
 aeropuerto_origen = aeropuertos[2]
 aeropuerto_destino = aeropuertos[7]
-avion = aviones[8]
-comisario = Comisario("Nombre del Comisario",33)
+avion1 = aviones[8]
+comisario1 = Comisario("Nombre del Comisario",33)
 
 aerolinea = aerolineas[5]
 
-vuelo = Vuelo(aeropuerto_origen, aeropuerto_destino,avion, aerolinea , comisario)
-print(vuelo)
+vuelo1 = Vuelo(aeropuerto_origen, aeropuerto_destino,avion1, aerolinea , comisario1)
+#print(vuelo1)
 
 aeropuerto_origen.solicitar_despegue()
 
-vuelo.despegar()
+vuelo1.despegar()
+
 aeropuerto_origen.resetear_status_despegue()
+aeropuerto_origen.añadir_despegue(vuelo1)
+
+for vuelos in aeropuerto_origen.despegues:
+    print(vuelos)
 
 
 aeropuerto_destino.solicitar_aterrizaje()
-vuelo.aterrizar()
+vuelo1.aterrizar()
 aeropuerto_destino.resetear_status_aterrizaje()
 
 
 pasajero1 = Pasajero("Nombre Pasajero 1","62222222",False)
-vuelo.añadir_pasajero(pasajero1)
+vuelo1.añadir_pasajero(pasajero1)
 
-print(f"Pasajeros en el vuelo: {len(vuelo.pasajeros)}")
+print(f"Pasajeros en el vuelo: {len(vuelo1.pasajeros)}")
+
+

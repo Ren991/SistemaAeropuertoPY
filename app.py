@@ -1,4 +1,4 @@
-from clases import datos
+from clases.datos import *
 
 
 

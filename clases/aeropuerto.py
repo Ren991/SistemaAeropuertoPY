@@ -7,7 +7,8 @@ class Aeropuerto():
         self.__ciudad = ciudad
         self.__status_aterrizaje = False
         self.__status_despegue = False
-        self.__vuelos = []
+        self.__despegues = []
+        self.__aterrizajes = []
 
         
 
@@ -43,12 +44,21 @@ class Aeropuerto():
         self.__status_aterrizaje = nuevo_status
     
     @property
-    def vuelos(self):
-        return self.__vuelos
+    def despegues(self):
+        return self.__despegues
     
+    @despegues.setter
+    def despegues(self,nuevos_despegues):
+        self.__despegues = nuevos_despegues
+
     @property
-    def vuelos(self,nuevos_vuelos):
-        self.__vuelos = nuevos_vuelos
+    def aterrizajes(self):
+        return self.__aterrizajes
+    
+    @aterrizajes.setter
+    def aterrizajes(self,nuevos_aterrizajes):
+        self.__aterrizajes = nuevos_aterrizajes
+    
     
     def solicitar_despegue(self):
         self.__status_despegue = True
@@ -62,9 +72,12 @@ class Aeropuerto():
     def resetear_status_aterrizaje(self): #=> Invierte valor propiedad status_aterrizaje
         self.__status_aterrizaje = False
 
-    
-    
+    def añadir_despegue(self,vuelo_nuevo):
+        self.__despegues.append(vuelo_nuevo)
 
-
+    def añadir_aterrizaje(self,vuelo):
+        self.__aterrizajes.append(vuelo)
+    
+        
     def __str__(self) -> str:
         return f"Aeropuerto {self.nombre} de la ciudad de {self.ciudad}"
