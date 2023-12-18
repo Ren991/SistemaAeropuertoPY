@@ -131,4 +131,4 @@ class Vuelo():
     
     
     def __str__(self):
-        return f"Código vuelo: {self.numero_vuelo} || Origen: {self.origen} || Destino: {self.destino} || Duración: {self.duracion_vuelo}Hs || Modelo avión: {self.modelo_avion}"
+        return f"Aerolinea: {self.aerolinea} || Código vuelo: {self.numero_vuelo} || Origen: {self.origen} || Destino: {self.destino} || Duración: {self.duracion_vuelo}Hs || Modelo avión: {self.modelo_avion}"
