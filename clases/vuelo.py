@@ -96,7 +96,7 @@ class Vuelo():
     @property
     def duracion_vuelo(self):
         duracion_en_horas = (self.horario_llegada - self.horario_salida).total_seconds() / 3600.0
-        return duracion_en_horas
+        return round(duracion_en_horas, 1)
     
     @property
     def comisario_vuelo(self):
@@ -131,4 +131,4 @@ class Vuelo():
     
     
     def __str__(self):
-        return f"Código vuelo: {self.numero_vuelo} || Origen: {self.origen} || Destino: {self.destino} || Duración: {self.duracion_vuelo} || Modelo avión: {self.modelo_avion}"
+        return f"Código vuelo: {self.numero_vuelo} || Origen: {self.origen} || Destino: {self.destino} || Duración: {self.duracion_vuelo}Hs || Modelo avión: {self.modelo_avion}"
