@@ -3,6 +3,7 @@ from .vuelo import Vuelo
 from .avion import Avion
 from .comisario import Comisario
 from .pasajero import Pasajero
+from .personal_aeropuerto import Personal_Aeropuerto
 
 
 # Crear instancias de otras clases
@@ -11,22 +12,7 @@ aeropuertos = [
     Aeropuerto("Jorge Chávez", "Lima"),
     Aeropuerto("Heathrow", "Londres"),
     Aeropuerto("Charles de Gaulle", "París"),
-    Aeropuerto("Los Angeles International", "Los Ángeles"),
-    Aeropuerto("Dubai International", "Dubái"),
-    Aeropuerto("Hong Kong International", "Hong Kong"),
-    Aeropuerto("O'Hare International", "Chicago"),
-    Aeropuerto("Sydney Kingsford Smith", "Sídney"),
-    Aeropuerto("Incheon International", "Seúl"),
-    Aeropuerto("El Dorado International", "Bogotá"),
-    Aeropuerto("Narita International", "Tokio"),
-    Aeropuerto("Munich Airport", "Múnich"),
-    Aeropuerto("Singapore Changi", "Singapur"),
-    Aeropuerto("Barajas Adolfo Suárez", "Madrid"),
-    Aeropuerto("Copenhagen Airport", "Copenhague"),
-    Aeropuerto("Benito Juárez", "Ciudad de México"),
-    Aeropuerto("Kuala Lumpur International", "Kuala Lumpur"),
-    Aeropuerto("Auckland Airport", "Auckland"),
-    Aeropuerto("Zurich Airport", "Zúrich"),
+    Aeropuerto("Los Angeles International", "Los Ángeles"),  
 ]
 
 aviones = [
@@ -93,8 +79,54 @@ comisarios = [
     Comisario("Patricia Torres", 53),
 ]
 
+empleados_aeropuerto_1 = [
+    Personal_Aeropuerto("Pepito1", "password123"),
+    Personal_Aeropuerto("Pepito2", "password123"),
+    Personal_Aeropuerto("Pepito3", "password123"),
+]
+
+empleados_aeropuerto_2 = [
+    Personal_Aeropuerto("Juanito1", "password123"),
+    Personal_Aeropuerto("Juanito2", "password123"),
+    Personal_Aeropuerto("Juanito3", "password123"),
+]
+
+empleados_aeropuerto_3 = [
+    Personal_Aeropuerto("Luisito1", "password123"),
+    Personal_Aeropuerto("Luisito2", "password123"),
+    Personal_Aeropuerto("Luisito3", "password123"),
+]
+
+empleados_aeropuerto_4 = [
+    Personal_Aeropuerto("Marito1", "password123"),
+    Personal_Aeropuerto("Marito2", "password123"),
+    Personal_Aeropuerto("Marito3", "password123"),
+]
+
+empleados_aeropuerto_5 = [
+    Personal_Aeropuerto("Ana1", "password123"),
+    Personal_Aeropuerto("Ana2", "password123"),
+    Personal_Aeropuerto("Ana3", "password123"),
+]
+
+# Agregar empleados a cada aeropuerto utilizando el método añadir_empleado
+for i, aeropuerto in enumerate(aeropuertos):
+    for empleado in globals()[f"empleados_aeropuerto_{i + 1}"]:
+        aeropuerto.añadir_empleado(empleado)
+
+# Mostrar los empleados de cada aeropuerto
+for aeropuerto in aeropuertos:
+    print(f"\nEmpleados en el aeropuerto {aeropuerto.nombre} ({aeropuerto.ciudad}):")
+    for empleado in aeropuerto.empleados:
+        print(f"Nombre: {empleado.nombre}, Contraseña: {empleado.password}")
+
+
+
+
+
+
 aeropuerto_origen = aeropuertos[2]
-aeropuerto_destino = aeropuertos[7]
+aeropuerto_destino = aeropuertos[3]
 avion1 = aviones[8]
 comisario1 = comisarios[9]
 
