@@ -70,10 +70,33 @@ aerolineas = [
     "Qantas",
 ]
 
+comisarios = [
+    Comisario("Pedro Pérez", 33),
+    Comisario("María García", 40),
+    Comisario("Juan López", 35),
+    Comisario("Laura Martínez", 38),
+    Comisario("Carlos Rodríguez", 42),
+    Comisario("Ana Díaz", 37),
+    Comisario("Javier Sánchez", 45),
+    Comisario("Elena Gómez", 39),
+    Comisario("Luis Vázquez", 44),
+    Comisario("Lucía Torres", 41),
+    Comisario("Roberto Ramírez", 36),
+    Comisario("Isabel Herrera", 43),
+    Comisario("Pedro Molina", 46),
+    Comisario("Silvia Navarro", 48),
+    Comisario("Miguel Castro", 50),
+    Comisario("Carmen Ortega", 49),
+    Comisario("Alejandro Jiménez", 52),
+    Comisario("Beatriz Ruiz", 47),
+    Comisario("Francisco Morales", 51),
+    Comisario("Patricia Torres", 53),
+]
+
 aeropuerto_origen = aeropuertos[2]
 aeropuerto_destino = aeropuertos[7]
 avion1 = aviones[8]
-comisario1 = Comisario("Nombre del Comisario",33)
+comisario1 = comisarios[9]
 
 aerolinea = aerolineas[5]
 
