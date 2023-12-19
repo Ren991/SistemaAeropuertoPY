@@ -1,8 +1,8 @@
-from aeropuerto import Aeropuerto
-from vuelo import Vuelo
-from avion import Avion
-from comisario import Comisario
-from pasajero import Pasajero
+from .aeropuerto import Aeropuerto
+from .vuelo import Vuelo
+from .avion import Avion
+from .comisario import Comisario
+from .pasajero import Pasajero
 
 
 # Crear instancias de otras clases

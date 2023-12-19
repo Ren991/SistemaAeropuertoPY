@@ -1,5 +1,7 @@
-from clases.datos import *
+from clases.datos import aerolineas
 
+for aero in aerolineas:
+    print(aero)
 
 
 

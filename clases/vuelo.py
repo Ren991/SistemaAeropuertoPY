@@ -1,8 +1,8 @@
-from aeropuerto import Aeropuerto
-from avion import Avion
-from comisario import Comisario
-from pasajero import Pasajero
-from code_generator import CodGenerator
+from .aeropuerto import Aeropuerto
+from .avion import Avion
+from .comisario import Comisario
+from .pasajero import Pasajero
+from .code_generator import CodGenerator
 from datetime import datetime, timedelta
 from random import randint
 
