@@ -1,9 +1,11 @@
+
 from .aeropuerto import Aeropuerto
+from .personal_aeropuerto import Personal_Aeropuerto
 from .vuelo import Vuelo
 from .avion import Avion
 from .comisario import Comisario
 from .pasajero import Pasajero
-from .personal_aeropuerto import Personal_Aeropuerto
+
 
 
 
@@ -80,40 +82,25 @@ comisarios = [
     Comisario("Patricia Torres", 53),
 ]
 
+aeropuertos[0].añadir_empleado(Personal_Aeropuerto("Pepito1", "password123"))
+aeropuertos[0].añadir_empleado(Personal_Aeropuerto("Pepito2", "password123"))
+aeropuertos[0].añadir_empleado(Personal_Aeropuerto("Pepito3", "password123"))
 
-empleados = [
-    Personal_Aeropuerto("Pepito1", "password123",aeropuertos[0]),
-    Personal_Aeropuerto("Pepito2", "password123",aeropuertos[0]),
-    Personal_Aeropuerto("Pepito3", "password123",aeropuertos[0]),
+aeropuertos[1].añadir_empleado(Personal_Aeropuerto("Fulanito1", "password123"))
+aeropuertos[1].añadir_empleado(Personal_Aeropuerto("Fulanito2", "password123"))
+aeropuertos[1].añadir_empleado(Personal_Aeropuerto("Fulanito3", "password123"))
 
+aeropuertos[2].añadir_empleado(Personal_Aeropuerto("Marito1", "password123"))
+aeropuertos[2].añadir_empleado(Personal_Aeropuerto("Marito2", "password123"))
+aeropuertos[2].añadir_empleado(Personal_Aeropuerto("Marito3", "password123"))
 
-    Personal_Aeropuerto("Pepito1", "password123",aeropuertos[1]),
-    Personal_Aeropuerto("Pepito2", "password123",aeropuertos[1]),
-    Personal_Aeropuerto("Pepito3", "password123",aeropuertos[1]),
-    
+aeropuertos[3].añadir_empleado(Personal_Aeropuerto("User1", "password123"))
+aeropuertos[3].añadir_empleado(Personal_Aeropuerto("User2", "password123"))
+aeropuertos[3].añadir_empleado(Personal_Aeropuerto("User3", "password123"))
 
-    Personal_Aeropuerto("Juanito1", "password123",aeropuertos[2]),
-    Personal_Aeropuerto("Juanito2", "password123",aeropuertos[2]),
-    Personal_Aeropuerto("Juanito3", "password123",aeropuertos[2]),
-    
-
-    Personal_Aeropuerto("Luisito1", "password123",aeropuertos[3]),
-    Personal_Aeropuerto("Luisito2", "password123",aeropuertos[3]),
-    Personal_Aeropuerto("Luisito3", "password123",aeropuertos[3]),
-    
-
-    Personal_Aeropuerto("Marito1", "password123",aeropuertos[4]),
-    Personal_Aeropuerto("Marito2", "password123",aeropuertos[4]),
-    Personal_Aeropuerto("Marito3", "password123",aeropuertos[4]),
-    
-
-    
-
-]
-
-
-
-
+aeropuertos[4].añadir_empleado(Personal_Aeropuerto("Luisito1", "password123"))
+aeropuertos[4].añadir_empleado(Personal_Aeropuerto("Luisito1", "password123"))
+aeropuertos[4].añadir_empleado(Personal_Aeropuerto("Luisito1", "password123"))
 
 
 

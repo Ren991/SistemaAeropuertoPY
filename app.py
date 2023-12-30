@@ -1,10 +1,52 @@
 from clases.datos import *
 
-for empleado in empleados:
-    print(empleado.aeropuerto.ciudad)
+
 
 
 # Menú principal
+def menu_personal_aeropuerto(aeropuerto_actual):
+    
+    while True:
+        
+        print("1- Habilitar despegue ")
+        print("2- Habilitar aterrizaje ")
+        print("3-Añadir vuelo")
+        print("4-volver a la pantalla anterior ")
+        opt = int(input("Ingrese una opcion : "))
+
+        if opt == 1:
+            print("Despegue habilitado")
+        elif opt == 2:
+            print("Aterrizaje habilitado")
+        elif opt == 3:
+            print("Vuelo añadido")
+        elif opt ==4:
+            print("volviendo al menú principal")
+            break
+        else:
+            print("Numero inválido por favor ingrese otro numero")    
+
+
+def personal_aeropuerto(aeropuerto_actual):
+    
+    print(aeropuerto_actual.ciudad)
+    nombre_usuario = input("ingrese nombre de  usuario: ")
+    contrasenia_usuario = input("Ingrese contrasenia: ")
+
+    flag = False
+    for empleado in aeropuerto_actual.empleados:
+        if empleado.nombre == nombre_usuario and empleado.password == contrasenia_usuario:
+            
+            flag = True
+            break
+    if flag == True:
+        menu_personal_aeropuerto(aeropuerto_actual)
+    else:
+        print("Credenciales inválidas")
+
+def comisarios_vuelo():
+    print("Bienvenido comisari@")
+    
 def menu():
     while True:
         print("\nMenú Principal:")
@@ -37,41 +79,35 @@ def menu():
             opcion = input("Ingrese el número de la opción: ")
 
             # En la sección donde el usuario selecciona el aeropuerto y la opción 1
-            if opcion == "1" and opcion:
-                
-                print("hola")
-            else:
-                print("Número de aeropuerto fuera de rango.")
+            if opcion == "1":
+                personal_aeropuerto(aeropuerto_actual)
 
-        elif opcion == "2":
-            print("\nMenú de Comisario de Vuelo:")
-            print("1. Solicitar despegue")
-            print("2. Solicitar aterrizaje")
-            print("3. Despegar")
-            print("4. Aterrizar")
-            print("5. Volver al menú principal")
+            elif opcion == "2":
+                print("\nMenú de Comisario de Vuelo:")
+                print("1. Solicitar despegue")
+                print("2. Solicitar aterrizaje")
+                print("3. Despegar")
+                print("4. Aterrizar")
+                print("5. Volver al menú principal")
 
-            opcion_comisario = input("Seleccione una opción: ")
+                opcion_comisario = input("Seleccione una opción: ")
 
-            if opcion_comisario == "1":                  
-                print("Despegue solicitado.")
-            elif opcion_comisario == "2":
-                # Lógica para solicitar aterrizaje (puedes implementarla según tus necesidades)
-                print("Aterrizaje solicitado.")
-            elif opcion_comisario == "3":
-                # Lógica para despegar (puedes implementarla según tus necesidades)
-                print("Despegue realizado.")
-            elif opcion_comisario == "4":
-                # Lógica para aterrizar (puedes implementarla según tus necesidades)
-                print("Aterrizaje realizado.")
-            elif opcion_comisario == "5":
-                continue
-            else:
-                print("Opción no válida. Inténtelo de nuevo.")
+                if opcion_comisario == "1":                  
+                    print("Despegue solicitado.")
+                elif opcion_comisario == "2":
+                    print("Aterrizaje solicitado.")
+                elif opcion_comisario == "3":
+                    print("Despegue realizado.")
+                elif opcion_comisario == "4":
+                    print("Aterrizaje realizado.")
+                elif opcion_comisario == "5":
+                    continue
+                else:
+                    print("Opción no válida. Inténtelo de nuevo.")
 
-        elif opcion == "3":
-            print("Saliendo del programa.")
-            break
+            elif opcion == "3":
+                print("Saliendo del programa.")
+                break
 
         else:
             print("Opción no válida. Inténtelo de nuevo.")

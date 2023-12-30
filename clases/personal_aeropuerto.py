@@ -1,13 +1,9 @@
 
-from .aeropuerto import Aeropuerto
 
 class Personal_Aeropuerto():
-    def __init__(self, nombre: str, password: str, aeropuerto: Aeropuerto) -> None:
+    def __init__(self, nombre: str, password: str) -> None:
         self.__nombre = nombre
-        self.__password = password
-        self.__aeropuerto = aeropuerto
-
-        
+        self.__password = password        
 
     @property
     def nombre(self):
@@ -24,13 +20,9 @@ class Personal_Aeropuerto():
     def password(self, nueva_password):
         self.__password = nueva_password
 
-    @property
-    def aeropuerto(self):
-        return self.__aeropuerto
+   
     
-    @aeropuerto.setter
-    def aeropuerto(self, nuevo_aeropuerto):
-        self.__aeropuerto = nuevo_aeropuerto
+  
 
     
 

@@ -1,4 +1,4 @@
-
+from .personal_aeropuerto import Personal_Aeropuerto
 
 class Aeropuerto():
     
@@ -86,6 +86,11 @@ class Aeropuerto():
     def añadir_aterrizaje(self,vuelo):
         self.__aterrizajes.append(vuelo)
 
+    def añadir_empleado(self, empleado: Personal_Aeropuerto):
+        self.__empleados.append(empleado)
+
+    def eliminar_empleado(self, empleado: Personal_Aeropuerto):
+        self.__empleados.remove(empleado)
     
         
     def __str__(self) -> str:
