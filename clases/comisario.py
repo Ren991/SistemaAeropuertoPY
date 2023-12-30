@@ -2,6 +2,7 @@ class Comisario():
     def __init__(self,nombre:str, edad:int) -> None:
         self.__nombre = nombre
         self.__edad= edad
+        
 
     @property
     def nombre(self):
@@ -18,6 +19,7 @@ class Comisario():
     @edad.setter
     def edad(self, nuevo_edad):
         self.__edad = nuevo_edad
+    
 
     def __str__(self) -> str:
         return f"Nombre Comisario: {self.nombre} || Edad: {self.edad}"

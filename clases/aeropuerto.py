@@ -1,5 +1,5 @@
 
-from .personal_aeropuerto import Personal_Aeropuerto
+
 class Aeropuerto():
     
     def __init__(self,nombre: str, ciudad:str) -> None:
@@ -86,8 +86,6 @@ class Aeropuerto():
     def añadir_aterrizaje(self,vuelo):
         self.__aterrizajes.append(vuelo)
 
-    def añadir_empleado(self, empleado: Personal_Aeropuerto):
-        self.__empleados.append(empleado)
     
         
     def __str__(self) -> str:
