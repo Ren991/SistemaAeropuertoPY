@@ -71,48 +71,48 @@ def menu():
         if aeropuerto_actual:
             print(f"Bienvenido al aeropuerto {aeropuerto_actual.nombre} ({aeropuerto_actual.ciudad})!")
 
-            print("\nSeleccione una opción:")
-            print("1. Personal de Aeropuerto")
-            print("2. Comisario de Vuelo")
-            print("3. Salir")
+            while True:
+                print("\nSeleccione una opción:")
+                print("1. Personal de Aeropuerto")
+                print("2. Comisario de Vuelo")
+                print("3. Salir")
 
-            opcion = input("Ingrese el número de la opción: ")
+                opcion = input("Ingrese el número de la opción: ")
 
-            # En la sección donde el usuario selecciona el aeropuerto y la opción 1
-            if opcion == "1":
-                personal_aeropuerto(aeropuerto_actual)
+                # En la sección donde el usuario selecciona el aeropuerto y la opción 1
+                if opcion == "1":
+                    personal_aeropuerto(aeropuerto_actual)
 
-            elif opcion == "2":
-                print("\nMenú de Comisario de Vuelo:")
-                print("1. Solicitar despegue")
-                print("2. Solicitar aterrizaje")
-                print("3. Despegar")
-                print("4. Aterrizar")
-                print("5. Volver al menú principal")
+                elif opcion == "2":
+                    print("\nMenú de Comisario de Vuelo:")
+                    print("1. Solicitar despegue")
+                    print("2. Solicitar aterrizaje")
+                    print("3. Despegar")
+                    print("4. Aterrizar")
+                    print("5. Volver al menú principal")
 
-                opcion_comisario = input("Seleccione una opción: ")
+                    opcion_comisario = input("Seleccione una opción: ")
 
-                if opcion_comisario == "1":                  
-                    print("Despegue solicitado.")
-                elif opcion_comisario == "2":
-                    print("Aterrizaje solicitado.")
-                elif opcion_comisario == "3":
-                    print("Despegue realizado.")
-                elif opcion_comisario == "4":
-                    print("Aterrizaje realizado.")
-                elif opcion_comisario == "5":
-                    continue
-                else:
-                    print("Opción no válida. Inténtelo de nuevo.")
+                    if opcion_comisario == "1":                  
+                        print("Despegue solicitado.")
+                    elif opcion_comisario == "2":
+                        print("Aterrizaje solicitado.")
+                    elif opcion_comisario == "3":
+                        print("Despegue realizado.")
+                    elif opcion_comisario == "4":
+                        print("Aterrizaje realizado.")
+                    elif opcion_comisario == "5":
+                        continue
+                    else:
+                        print("Opción no válida. Inténtelo de nuevo.")
 
-            elif opcion == "3":
-                print("Saliendo del programa.")
-                break
+                elif opcion == "3":
+                    print("Saliendo del programa.")
+                    break
 
         else:
             print("Opción no válida. Inténtelo de nuevo.")
-    else:
-        print("Nombre de aeropuerto no válido. Inténtelo de nuevo.")
+    
 
 # Ejecutar el menú
 menu()
