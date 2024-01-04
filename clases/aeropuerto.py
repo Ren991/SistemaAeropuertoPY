@@ -83,10 +83,10 @@ class Aeropuerto():
         self.__vuelos.append(vuelo)
 
     
-    def solicitar_despegue(self):
+    def conceder_despegue(self):
         self.__status_despegue = True
     
-    def solicitar_aterrizaje(self):
+    def conceder_aterrizaje(self):
         self.__status_aterrizaje = True
 
     def resetear_status_despegue(self): #=> Invierte valor propiedad status_despegue

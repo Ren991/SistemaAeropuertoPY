@@ -80,7 +80,7 @@ def añadir_vuelo(aeropuerto_actual):
 
         aeropuerto_actual.añadir_vuelo(nuevo_despegue)
 
-    elif opcion == 2:
+    elif tipo_vuelo == 2:
         aeropuerto_destino = aeropuerto_actual
 
         print("Lista de aeropuertos:")

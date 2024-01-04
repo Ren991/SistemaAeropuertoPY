@@ -17,6 +17,9 @@ class Vuelo():
         self.__aerolinea = aerolinea
         self.__numero_vuelo = Vuelo.__crear_num_vuelo()
         self.__comisario_vuelo = comisario_vuelo
+        self.__despegue_solicidado = False
+        self.__aterrizaje_solicitado = False
+
         
 
         
@@ -104,6 +107,28 @@ class Vuelo():
     @comisario_vuelo.setter
     def comisario_vuelo(self, nuevo_comisario):
         self.__comisario_vuelo = nuevo_comisario
+
+    @property
+    def despegue_solicitado(self):
+        return self.__despegue_solicidado
+    
+    @despegue_solicitado.setter
+    def despegue_solicitado(self, nuevo_status):
+        self.__despegue_solicidado = nuevo_status
+
+    @property
+    def aterrizaje_solicitado(self):
+        return self.__aterrizaje_solicitado
+    
+    @aterrizaje_solicitado.setter
+    def aterrizaje_solicitado(self, nuevo_status):
+        self.__aterrizaje_solicitado = nuevo_status
+
+    def solicitar_aterrizaje(self):
+        self.__aterrizaje_solicitado = True
+
+    def solicitar_despegue(self):
+        self.__despegue_solicidado = True
 
 
     def despegar(self):

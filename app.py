@@ -41,7 +41,7 @@ def menu():
                     personal_aeropuerto(aeropuerto_actual)
 
                 elif opcion == "2":
-                    comisarios_vuelo(comisarios)                   
+                    comisarios_vuelo(comisarios,aeropuerto_actual)                   
 
                 elif opcion == "3":
                     print("Saliendo del programa.")
