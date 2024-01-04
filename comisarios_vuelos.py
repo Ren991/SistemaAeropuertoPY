@@ -95,10 +95,33 @@ def despegar(aeropuerto_actual):
 
 def aterrizar(aeropuerto_actual):
 
+    vuelos_habilitados = []
     if len(vuelos_comisario) == 0:
         print("No hay vuelos disponibles para aterrizar")
     else:
-        print("a")
+        if aeropuerto_actual.status_aterrizaje == True:
+            for vuelo in vuelos_comisario:
+                if vuelo.aterrizaje_solicitado == True:
+                    vuelos_habilitados.append(vuelo)
+            
+            if len(vuelos_habilitados) > 0:
+                for i, vuelo in enumerate(vuelos_habilitados):
+                    print(f"{i + 1}. {vuelo}")
+                while True:
+                    opcion = input("Ingrese el número del vuelo que desea Aterrizar: ")
+                    try:
+                        opcion = int(opcion)
+                        if 1 <= opcion <= len(vuelos_habilitados):
+                            vuelo_seleccionado = vuelos_habilitados[opcion - 1]                            
+                            vuelo_seleccionado.aterrizar()
+                            break  # Salir del bucle while después de una selección válida
+                        else:
+                            print("Número fuera de rango. Por favor, ingrese un número válido.")
+                    except ValueError:
+                        print("Por favor, ingrese un número entero válido.")
+                
+        else:
+            print("El aeropuerto no habilitó el despegue aún.")
 
 
 def menu_comisario(comisario,aeropuerto_actual):
@@ -135,8 +158,7 @@ def comisarios_vuelo(comisarios, aeropuerto_actual):
     nombre_comisario = input("Ingrese nombre de comisario/a : ")
     flag = False
     for comisario in comisarios:
-        if nombre_comisario == comisario.nombre:
-            
+        if nombre_comisario == comisario.nombre:            
             flag = True            
             menu_comisario(comisario, aeropuerto_actual)
             break
