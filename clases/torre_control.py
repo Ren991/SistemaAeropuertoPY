@@ -1,7 +1,7 @@
 
 
-from aeropuerto import Aeropuerto
-from vuelo import *
+from .aeropuerto import Aeropuerto
+from .vuelo import *
 
 
 class Torre_Control():
