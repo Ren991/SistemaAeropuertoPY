@@ -60,7 +60,7 @@ aerolineas = [
 ]
 
 comisarios = [
-    Comisario("Pedro Pérez", 33),
+    Comisario("Pedro Perez", 33),
     Comisario("María García", 40),
     Comisario("Juan López", 35),
     Comisario("Laura Martínez", 38),
@@ -104,14 +104,15 @@ aeropuertos[4].añadir_empleado(Personal_Aeropuerto("Luisito1", "password123"))
 
 
 
-aeropuerto_origen = aeropuertos[2]
+aeropuerto_origen = aeropuertos[0]
 aeropuerto_destino = aeropuertos[3]
 avion1 = aviones[8]
-comisario1 = comisarios[9]
+comisario1 = comisarios[0]
 
 aerolinea = aerolineas[5]
 
 vuelo1 = Vuelo(aeropuerto_origen, aeropuerto_destino,avion1, aerolinea , comisario1)
+aeropuerto_origen.añadir_vuelo(vuelo1)
 #print(vuelo1)
 
 aeropuerto_origen.conceder_despegue()

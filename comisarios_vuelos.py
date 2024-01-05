@@ -83,6 +83,7 @@ def despegar(aeropuerto_actual):
                         if 1 <= opcion <= len(vuelos_habilitados):
                             vuelo_seleccionado = vuelos_habilitados[opcion - 1]                            
                             vuelo_seleccionado.despegar()
+                            print("Vuelo despegado con éxito")
                             break  # Salir del bucle while después de una selección válida
                         else:
                             print("Número fuera de rango. Por favor, ingrese un número válido.")

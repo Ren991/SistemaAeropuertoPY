@@ -204,12 +204,10 @@ def menu_personal_aeropuerto(aeropuerto_actual):
         if opt == 1:
             habilitar_despegue(aeropuerto_actual)
         elif opt == 2:
-            print("Aterrizaje habilitado")
+            habilitar_aterrizaje(aeropuerto_actual)
         elif opt == 3:
-            añadir_vuelo(aeropuerto_actual)
-            print("Vuelo añadido")
-        elif opt ==4:
-            print("Listado de vuelos")
+            añadir_vuelo(aeropuerto_actual)            
+        elif opt ==4:            
             listado_vuelos(aeropuerto_actual)
         elif opt ==5:
             print("Volviendo al menú principal")
@@ -217,9 +215,7 @@ def menu_personal_aeropuerto(aeropuerto_actual):
         else:
             print("Numero inválido por favor ingrese otro numero")    
 
-
-def personal_aeropuerto(aeropuerto_actual):
-    
+def personal_aeropuerto(aeropuerto_actual):    
     print(aeropuerto_actual.ciudad)
     nombre_usuario = input("ingrese nombre de  usuario: ")
     contrasenia_usuario = input("Ingrese contrasenia: ")
