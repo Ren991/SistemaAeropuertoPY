@@ -162,8 +162,35 @@ def añadir_vuelo(aeropuerto_actual):
         añadir_aterrizaje(aeropuerto_actual)        
     else:
         print("Opcion inválida. Por favor inténtelo nuevamente. ")
-        
 
+def habilitar_despegue(aeropuerto_actual):
+    #Primero se fija si hay alguna solicitación de despegue
+    
+    hayVuelo = False
+    for vuelo in aeropuerto_actual.vuelos:
+        if vuelo.despegue_solicitado == True:
+            hayVuelo = True
+            aeropuerto_actual.conceder_despegue()
+            print(f"Pista habilitada. Por favor comisari@ {vuelo.comisario_vuelo.nombre} proceda con el despegue")
+    
+    if hayVuelo == False:
+        print("No hay vuelos para habilitar")
+
+def habilitar_aterrizaje(aeropuerto_actual):
+    #Primero se fija si hay alguna solicitación de aterrizaje
+    
+    hayVuelo = False
+    for vuelo in aeropuerto_actual.vuelos:
+        if vuelo.aterrizaje_solicitado == True:
+            hayVuelo = True
+            aeropuerto_actual.conceder_aterrizaje()
+            print(f"Pista habilitada. Por favor comisari@ {vuelo.comisario_vuelo.nombre} proceda con el despegue")
+        break
+        
+    if hayVuelo == False:
+        print("No hay vuelos para habilitar")
+    
+    
 def menu_personal_aeropuerto(aeropuerto_actual):
     
     while True:  
@@ -175,7 +202,7 @@ def menu_personal_aeropuerto(aeropuerto_actual):
         opt = int(input("Ingrese una opcion : "))
 
         if opt == 1:
-            print("Despegue habilitado")
+            habilitar_despegue(aeropuerto_actual)
         elif opt == 2:
             print("Aterrizaje habilitado")
         elif opt == 3:
