@@ -138,16 +138,16 @@ def menu_comisario(comisario,aeropuerto_actual):
 
         if opcion_comisario == "1": 
             solicitar_despegue(comisario,aeropuerto_actual)                 
-            print("Despegue solicitado.")
+            
         elif opcion_comisario == "2":
             solicitar_aterrizaje(comisario,aeropuerto_actual)
             print("Aterrizaje solicitado.")
         elif opcion_comisario == "3":
-            despegar(comisario)
-            print("Despegue realizado.")
+            despegar(aeropuerto_actual)
+            
         elif opcion_comisario == "4":
-            aterrizar(comisario)
-            print("Aterrizaje realizado.")
+            aterrizar(aeropuerto_actual)
+            
         elif opcion_comisario == "5":
             print("Volviendo al menú principal ... ")
             break

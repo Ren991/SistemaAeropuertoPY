@@ -1,4 +1,6 @@
 from clases.datos import *
+
+
 def listado_vuelos(aeropuerto_actual):
     if len(aeropuerto_actual.vuelos) != 0:
         for vuelo in aeropuerto_actual.vuelos:
@@ -7,10 +9,7 @@ def listado_vuelos(aeropuerto_actual):
         print("No hay vuelos disponibles para mostrar en el aeropuerto seleccionado . ")
 
 
-def añadir_vuelo(aeropuerto_actual):
-    tipo_vuelo = int(input("Ingrese 1- Salida , 2-Desepegue"))
-
-    if tipo_vuelo == 1:
+def añadir_salida(aeropuerto_actual):
         aeropuerto_origen = aeropuerto_actual
 
         print("Lista de aeropuertos:")
@@ -79,8 +78,9 @@ def añadir_vuelo(aeropuerto_actual):
         nuevo_despegue =  Vuelo(aeropuerto_origen, aeropuerto_destino,modelo_avion, aerolinea_vuelo , comisario_vuelo)
 
         aeropuerto_actual.añadir_vuelo(nuevo_despegue)
-
-    elif tipo_vuelo == 2:
+    
+def añadir_aterrizaje(aeropuerto_actual):
+    
         aeropuerto_destino = aeropuerto_actual
 
         print("Lista de aeropuertos:")
@@ -149,6 +149,17 @@ def añadir_vuelo(aeropuerto_actual):
         nuevo_aterrizaje =  Vuelo(aeropuerto_origen, aeropuerto_destino,modelo_avion, aerolinea_vuelo , comisario_vuelo)
 
         aeropuerto_actual.añadir_vuelo(nuevo_aterrizaje)
+
+
+
+def añadir_vuelo(aeropuerto_actual):
+    tipo_vuelo = int(input("Ingrese 1- Salida o 2- Aterrizaaje"))
+
+    if tipo_vuelo == 1:
+        añadir_salida(aeropuerto_actual)       
+
+    elif tipo_vuelo == 2:
+        añadir_aterrizaje(aeropuerto_actual)        
     else:
         print("Opcion inválida. Por favor inténtelo nuevamente. ")
         
@@ -175,6 +186,7 @@ def menu_personal_aeropuerto(aeropuerto_actual):
             listado_vuelos(aeropuerto_actual)
         elif opt ==5:
             print("Volviendo al menú principal")
+            break
         else:
             print("Numero inválido por favor ingrese otro numero")    
 

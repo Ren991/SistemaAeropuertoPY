@@ -114,7 +114,7 @@ aerolinea = aerolineas[5]
 vuelo1 = Vuelo(aeropuerto_origen, aeropuerto_destino,avion1, aerolinea , comisario1)
 #print(vuelo1)
 
-aeropuerto_origen.solicitar_despegue()
+aeropuerto_origen.conceder_despegue()
 
 vuelo1.despegar()
 
@@ -125,7 +125,7 @@ for vuelos in aeropuerto_origen.despegues:
     print(vuelos)
 
 
-aeropuerto_destino.solicitar_aterrizaje()
+aeropuerto_destino.conceder_aterrizaje()
 vuelo1.aterrizar()
 aeropuerto_destino.resetear_status_aterrizaje()
 
